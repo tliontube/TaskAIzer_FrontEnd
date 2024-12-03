@@ -1,15 +1,8 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios from "axios";
 
-type ApiOptions = "GET" | "POST" | "PUT" | "DELETE";
-
-const ApiCall = async (
-  baseurl: string,
-  endpoint: string,
-  options: ApiOptions,
-  body?: any
-) => {
+const ApiCall = async (baseurl, endpoint, options, body) => {
   const url = `${baseurl}${endpoint}`;
-  const config: AxiosRequestConfig = {
+  const config = {
     method: options,
     url: url,
   };
